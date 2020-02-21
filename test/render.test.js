@@ -280,6 +280,27 @@ describe('PostHTML Render', function () {
         expect(render(fixture, options)).to.eql(expected)
       })
 
+      it('Slash Min', function () {
+        var options = { closingSingleTag: 'slashMin' }
+
+        var fixture = { tag: 'br' }
+        var expected = '<br/>'
+
+        expect(render(fixture, options)).to.eql(expected)
+      })
+
+      it('Slash Min Unquoted', function () {
+        var options = {
+          closingSingleTag: 'slashMin',
+          quoteAllAttributes: false
+        }
+
+        var fixture = { tag: 'area', attrs: { href: 'contact.html' } }
+        var expected = '<area href=contact.html />'
+
+        expect(render(fixture, options)).to.eql(expected)
+      })
+
       it('Default', function () {
         var options = { closingSingleTag: 'default' }
 

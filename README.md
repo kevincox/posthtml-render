@@ -157,6 +157,16 @@ const html = render(tree, { closingSingleTag: 'slash' })
 <custom />
 ```
 
+##### `'slashMin'`
+
+```js
+const html = render(tree, { closingSingleTag: 'slashMin' })
+```
+
+```html
+<custom/>
+```
+
 ##### `'default' (Default)`
 
 ```js
